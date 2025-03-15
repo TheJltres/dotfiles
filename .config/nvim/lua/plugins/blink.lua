@@ -4,6 +4,7 @@ return {
         'rafamadriz/friendly-snippets',
     },
     version = '*',
+    event = "InsertEnter",
     ---@module 'blink.cmp'
     ---@type blink.cmp.Config
     opts = {
@@ -26,7 +27,10 @@ return {
         sources = {
             default = { 'lsp', 'path', 'snippets', 'buffer' },
         },
+
         fuzzy = { implementation = "prefer_rust" },
+
+        signature = { enabled = true },
     },
     opts_extend = {
         "sources.default",
