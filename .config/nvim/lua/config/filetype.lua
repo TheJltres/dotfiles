@@ -1,5 +1,5 @@
 vim.filetype.add({
-    extension = {
-        zmpl = 'html',
+    pattern = {
+        [".*%.blade%.php"] = "html",
     },
 })

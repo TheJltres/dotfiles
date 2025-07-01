@@ -22,14 +22,12 @@ return {
                 vim.keymap.set('n', 'grr', vim.lsp.buf.references, opts)
                 vim.keymap.set('n', 'gra', vim.lsp.buf.code_action, opts)
                 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, opts)
-                vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
-                vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
                 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, opts)
 
                 local client = vim.lsp.get_client_by_id(args.data.client_id)
                 if not client then return end
 
-                if client.supports_method('textDocument/formatting') then
+                if client.supports_method("textDocument/formatting") then
                     vim.api.nvim_create_autocmd('BufWritePre', {
                         buffer = args.buf,
                         callback = function()
