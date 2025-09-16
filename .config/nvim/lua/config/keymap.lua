@@ -25,3 +25,8 @@ vim.keymap.set("x", "<leader>p", [["_dP]])
 -- Copy to file clipboard
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])
+
+-- Quickfix navigation
+vim.keymap.set("n", "<leader>j", "<cmd>cnext<CR>zz", { desc = "Quickfix next" })
+vim.keymap.set("n", "<leader>k", "<cmd>cprev<CR>zz", { desc = "Quickfix previous" })
+vim.keymap.set("n", "<leader>q", "<cmd>cclose<CR>", { desc = "Close quickfix list" })
